@@ -18,4 +18,10 @@
   spec-benchmark = import ./envs/spec-benchmark/shell.nix { inherit pkgs; };
   xilinx-vitis = import ./envs/xilinx-vitis/shell.nix { inherit pkgs; };
   yocto = import ./envs/yocto/shell.nix { inherit pkgs; };
+
+  # Zephyr environments
+  zephyr = (import ./envs/zephyr/shell.nix { inherit pkgs; }).default;
+  zephyr-sdk = (import ./envs/zephyr/shell.nix { inherit pkgs; }).sdk;
+  zephyr-minimal = (import ./envs/zephyr/shell.nix { inherit pkgs; }).minimal;
+  zephyr-arm = (import ./envs/zephyr/shell.nix { inherit pkgs; }).arm;
 }
